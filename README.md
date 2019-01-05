@@ -2,8 +2,8 @@
 
 Some toy parsers written using Angstrom.
 
-1. Hex color parser.
-2. Bencode (`.torrent` file format) parser.
+1. Hex color parser. [Link](https://github.com/anuragsoni/angstrom-examples/blob/master/src/colors.ml).
+2. Bencode (`.torrent` file format) parser. [Link](https://github.com/anuragsoni/angstrom-examples/blob/master/src/bencode.ml).
    We use the following type for representing bencode:
     ```ocaml
     type t =
