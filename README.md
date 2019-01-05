@@ -1,6 +1,15 @@
 # Angstrom Examples
 
-Some toy parsers written using Angstrom.
+Examples of parsers written using [Angstrom](https://github.com/inhabitedtype/angstrom).
+
+## Build
+1. Install `angstrom` (`opam install angstrom`)
+2. `dune build`
+
+## Explore via repl
+1. `dune utop src`
+
+## Example list
 
 1. Hex color parser. [Link](https://github.com/anuragsoni/angstrom-examples/blob/master/src/colors.ml).
 2. Bencode (`.torrent` file format) parser. [Link](https://github.com/anuragsoni/angstrom-examples/blob/master/src/bencode.ml).
