@@ -1,0 +1,4 @@
+(library
+  (public_name parsers)
+  (wrapped false)
+  (libraries angstrom))
