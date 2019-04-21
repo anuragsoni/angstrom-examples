@@ -9,14 +9,13 @@ type t =
 let signed_integer =
   let is_digit = function '0' .. '9' -> true | _ -> false in
   let is_sign = function '+' | '-' -> true | _ -> false in
-  let number sign str =
-    let multiplier = if sign = "-" then -1 else 1 in
-    match int_of_string_opt str with
-    | Some x -> return (multiplier * x)
-    | _ -> fail ("could not convert string to integer: " ^ str)
+  let take_digits = take_while1 is_digit >>| int_of_string in
+  let multiplier = take_while is_sign >>= function
+    | "" | "+" -> return 1
+    | "-" -> return (-1)
+    | _ -> fail "Invalid sign"
   in
-  take_while is_sign
-  >>= fun sign -> take_while is_digit >>= fun str -> number sign str
+  lift2 (fun multiplier digits -> multiplier * digits) multiplier take_digits
 
 let make_tuple a b = (a, b)
 
